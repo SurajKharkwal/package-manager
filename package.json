@@ -6,7 +6,9 @@
     "build": "dotenv -e ./.env -- turbo build",
     "dev": "dotenv -e ./.env -- turbo dev",
     "lint": "dotenv -e ./.env -- turbo lint",
-    "format": "dotenv -e ./.env -- prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "dotenv -e ./.env -- prettier --write \"**/*.{ts,tsx,md}\"",
+    "db:migrate": "turbo db:migrate",
+    "db:generate": "turbo db:generate"
   },
   "devDependencies": {
     "@workspace/eslint-config": "workspace:*",

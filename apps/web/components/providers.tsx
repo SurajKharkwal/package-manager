@@ -1,7 +1,8 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { ThemeProvider as NextThemesProvider } from "next-themes"
+import * as React from "react";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
+import NextTopLoader from "nextjs-toploader";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -12,7 +13,8 @@ export function Providers({ children }: { children: React.ReactNode }) {
       disableTransitionOnChange
       enableColorScheme
     >
+      <NextTopLoader color="#FFF" />
       {children}
     </NextThemesProvider>
-  )
+  );
 }

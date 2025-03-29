@@ -21,3 +21,66 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+enum Role {
+  ADMIN
+  MANAGER
+  CREW
+}
+
+model Qrcode {
+  code         String   @id @default(uuid())
+  name         String
+  description  String
+  costPrice    Float
+  sellingPrice Float
+  createdAt    DateTime @default(now())
+
+  // Relation: One Qrcode can have many entries
+  entries Entry[]
+}
+
+model Account {
+  userId    String   @id @default(uuid())
+  name      String
+  role      Role     @default(CREW)
+  email     String   @unique
+  mobileNo  Int?     @unique
+  imagePath String?
+  createdAt DateTime @default(now())
+
+  // Relation: One user can make multiple entries
+  entries Entry[]
+}
+
+model Entry {
+  eid          String   @id @default(uuid())
+  date         DateTime @default(now())
+  noOfItemsIn  Int      @default(0)
+  noOfItemsOut Int      @default(0)
+
+  // Foreign keys
+  qrcodeId String
+  userId   String
+
+  // Relations
+  qrcode Qrcode  @relation(fields: [qrcodeId], references: [code], onDelete: Cascade)
+  user   Account @relation(fields: [userId], references: [userId], onDelete: Cascade)
+
+  // Unique Constraint for one QR code per day
+  @@unique([qrcodeId, date])
+}
+
+enum Category {
+  IMPORTANT
+  SUCCESS
+  GENERAL
+}
+
+model Notifications {
+  id       DateTime @id @default(now())
+  category Category
+  title    String
+  message  String
+  for      Role
+}
