@@ -1,0 +1,20 @@
+{
+  "name": "@workspace/db",
+  "version": "0.0.0",
+  "scripts": {
+    "postinstall": "prisma generate --no-engine",
+    "db:generate": "prisma generate --no-engine",
+    "db:migrate": "dotenv -e ../../.env -- prisma migrate dev --skip-generate",
+    "db:deploy": "dotenv -e ../../.env -- prisma deploy",
+    "db:studio": "prisma studio"
+  },
+  "devDependencies": {
+    "prisma": "^6.5.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.5.0"
+  },
+  "exports": {
+    ".": "./src/client.ts"
+  }
+}
