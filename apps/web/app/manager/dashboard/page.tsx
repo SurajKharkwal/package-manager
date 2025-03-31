@@ -3,6 +3,9 @@ import Profit from "./ui/profit-card";
 import Entries from "./ui/entries-card";
 import Colleagues from "./ui/team-card";
 import { Skeleton } from "@workspace/ui/components/skeleton";
+import RecentEntries from "./ui/recet-entries";
+import { DataTableSkeleton } from "./ui/table-loading";
+import { columns } from "./ui/column";
 
 export default function Page() {
   return (
@@ -18,6 +21,10 @@ export default function Page() {
           <Colleagues />
         </Suspense>
       </div>
+
+      <Suspense fallback={<DataTableSkeleton columns={columns} />}>
+        <RecentEntries />
+      </Suspense>
     </div>
   );
 }

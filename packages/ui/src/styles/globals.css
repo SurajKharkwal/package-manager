@@ -7,6 +7,19 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@keyframes loading-gradient {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-loading-gradient {
+  animation: loading-gradient 1.5s infinite linear;
+}
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
