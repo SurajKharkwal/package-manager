@@ -57,23 +57,21 @@ export default function QrcodeForm({
   const [qrCode, setQrCode] = useState<string>(code);
 
   async function onSubmit(values: FormType) {
-    try {
-      const result = await upsertQrcode(code, values);
-      console.log("QR Code Result:", result);
-
-      if (result.code) {
-        setQrCode(result.code);
-      }
-    } catch (error) {
-      toast.error("Cant not register the qrcode");
-      console.error("QR Code generation failed:", error);
-    }
+    console.log("Code client side", code);
+    const result = await upsertQrcode(code, values);
+    console.log("QR Code Result:", result);
+    setQrCode(result.code);
+    toast("Qrcode was" + code ? "updated" : "generated", {
+      description: new Date().toUTCString(),
+    });
   }
 
   return (
-    <div className="w-full container h-full grid xl:grid-cols-2 p-8 max-md:p-2">
+    <div className="w-full container h-full grid xl:grid-cols-2 p-8 max-md:p-6">
       <section className="md:p-4">
-        <h1 className="text-3xl font-bold py-4">Generate QR Code</h1>
+        <h1 className="text-3xl font-bold py-4">
+          {code ? "Update Qrcode" : "Generate Qrcode"}
+        </h1>
 
         <FormProvider {...form}>
           <form
@@ -183,6 +181,8 @@ export default function QrcodeForm({
                 </>
               ) : form.formState.isSubmitSuccessful ? (
                 "Submitted!"
+              ) : code !== "" ? (
+                "Update Qrcode"
               ) : (
                 "Generate Qrcode"
               )}

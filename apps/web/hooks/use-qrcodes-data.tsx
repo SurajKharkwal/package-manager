@@ -15,7 +15,7 @@ export default function useQrcodesData(
     async function getData() {
       setLoading(true);
       const { data, rowCount } = await getQrcodeData(filterValue, pagination);
-      setData((p) => [...p, ...data]);
+      setData(data);
       setRowCount(rowCount);
       setLoading(false);
     }

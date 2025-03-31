@@ -12,7 +12,7 @@ export default function useEntriesData(pagination: PaginationState) {
     async function getData() {
       setLoading(true);
       const { data, rowCount } = await getEntriesData(pagination);
-      setData((p) => p.concat(data));
+      setData(data);
       setRowCount(rowCount);
       setLoading(false);
     }

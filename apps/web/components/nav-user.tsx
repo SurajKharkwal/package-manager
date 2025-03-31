@@ -30,10 +30,12 @@ import {
 } from "@workspace/ui/components/sidebar";
 import { SignOutButton, useUser } from "@clerk/nextjs";
 import { Skeleton } from "@workspace/ui/components/skeleton";
+import { useRouter } from "nextjs-toploader/app";
 
 export function NavUser() {
   const { isMobile } = useSidebar();
   const { user, isLoaded } = useUser();
+  const router = useRouter();
 
   if (!isLoaded) {
     return (
@@ -111,19 +113,26 @@ export function NavUser() {
                 <BadgeCheck />
                 Account
               </DropdownMenuItem>
-              <DropdownMenuItem>
+              <DropdownMenuItem onClick={() => router.push("/manager/billing")}>
                 <CreditCard />
                 Billing
               </DropdownMenuItem>
-              <DropdownMenuItem>
+              <DropdownMenuItem
+                onClick={() => router.push("/manager/notification")}
+              >
                 <Bell />
                 Notifications
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
-              <LogOut />
-              <SignOutButton />
+
+            <DropdownMenuItem asChild>
+              <SignOutButton>
+                <div className="flex items-center gap-2">
+                  <LogOut />
+                  <span>Sign Out</span>
+                </div>
+              </SignOutButton>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

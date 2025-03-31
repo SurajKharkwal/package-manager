@@ -5,11 +5,11 @@ import { PaginationState } from "@tanstack/react-table";
 import { prisma } from "@workspace/db";
 
 export async function deleteQrcode(code: string) {
-  const { sessionClaims } = await auth();
+  const { sessionClaims, userId } = await auth();
   const role = sessionClaims?.role;
 
-  if (!role || (role !== "ADMIN" && role !== "MANAGER"))
-    throw new Error("Un authorized");
+  console.log(role, userId);
+  if (role === undefined || role === "CREW") throw new Error("Un authorized");
 
   try {
     await prisma.qrcode.delete({

@@ -8,7 +8,7 @@ export default async function Page({
 }) {
   const { qrcode } = await searchParams;
 
-  if (!qrcode) return <QrcodeForm />;
+  if (!qrcode) return <QrcodeForm code="" />;
 
   const data = await prisma.qrcode.findFirst({
     where: { code: qrcode },
@@ -18,7 +18,8 @@ export default async function Page({
 
   return (
     <QrcodeForm
-      description={data.code}
+      code={qrcode ?? ""}
+      description={data.description}
       costPrice={data.costPrice}
       sellingPrice={data.sellingPrice}
       name={data.name}

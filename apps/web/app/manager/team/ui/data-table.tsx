@@ -93,7 +93,7 @@ export function DataTable<TData, TValue>({
       <div className="flex w-full mx-auto items-center py-4">
         <Input
           onChange={(e) => setFilterValue(e.target.value)}
-          placeholder="Filter qrcode..."
+          placeholder="Filter email..."
           className="max-w-sm md:ml-4"
         />
         <DropdownMenu>

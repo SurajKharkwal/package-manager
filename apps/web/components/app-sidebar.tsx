@@ -61,7 +61,7 @@ const data = {
     },
     {
       title: "Get Help",
-      url: "/manager/get-help",
+      url: "/manager/billing",
       icon: HelpCircleIcon,
     },
   ],

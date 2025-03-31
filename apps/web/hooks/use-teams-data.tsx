@@ -13,7 +13,7 @@ export function useTeamData(pagination: PaginationState) {
     const timeout = setTimeout(async () => {
       setLoading(true);
       const { rowCount, data } = await getTeamData(filterValue, pagination);
-      setData((p) => p.concat(data));
+      setData(data);
       setRowCount(rowCount);
       setLoading(false);
     }, 800);

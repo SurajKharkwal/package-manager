@@ -73,7 +73,7 @@ export default function ActionComp({ row }: { row: Row<Qrcode> }) {
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() =>
-              router.push(`/manager/edit-qrcode?qrcode=${row.original.code}`)
+              router.push(`/manager/upsert-qrcode?qrcode=${row.original.code}`)
             }
           >
             <Pen className="mr-2 h-4 w-4" />
