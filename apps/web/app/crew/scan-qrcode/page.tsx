@@ -11,7 +11,7 @@ export default async function Page({
   if (!cameraLabel && !cameraId)
     throw new Error("cameraId and cameraLabel not found");
   return (
-    <div className="w-full flex flex-col gap-8 items-center justify-center min-h-screen">
+    <div className="w-full flex flex-col gap-8 items-center justify-center min-h-dvh">
       <Scanner cameraLabel={cameraLabel} cameraId={cameraId} />
       <Link
         className={buttonVariants({ variant: "outline" })}

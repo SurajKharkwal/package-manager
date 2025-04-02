@@ -8,7 +8,6 @@ export async function deleteQrcode(code: string) {
   const { sessionClaims, userId } = await auth();
   const role = sessionClaims?.role;
 
-  console.log(role, userId);
   if (role === undefined || role === "CREW") throw new Error("Un authorized");
 
   try {

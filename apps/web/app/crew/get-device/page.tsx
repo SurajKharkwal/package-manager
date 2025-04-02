@@ -4,8 +4,15 @@ import { CameraDevice, Html5Qrcode } from "html5-qrcode";
 import { useEffect, useState } from "react";
 import { useRouter } from "nextjs-toploader/app";
 import { Card, CardContent } from "@workspace/ui/components/card";
-import { RadioGroup, RadioGroupItem } from "@workspace/ui/components/radio-group";
-import { Alert, AlertDescription, AlertTitle } from "@workspace/ui/components/alert";
+import {
+  RadioGroup,
+  RadioGroupItem,
+} from "@workspace/ui/components/radio-group";
+import {
+  Alert,
+  AlertDescription,
+  AlertTitle,
+} from "@workspace/ui/components/alert";
 import { Label } from "@workspace/ui/components/label";
 
 export default function GetDevice() {
@@ -16,15 +23,15 @@ export default function GetDevice() {
   useEffect(() => {
     Html5Qrcode.getCameras()
       .then((availableDevices) => {
-        if (availableDevices.length > 0) {
+        if (availableDevices.length === 0) {
           const firstDevice = availableDevices[0];
           if (firstDevice) {
             router.push(
-              `/crew/scan-qrcode?cameraId=${encodeURIComponent(firstDevice.id)}&cameraLabel=${encodeURIComponent(firstDevice.label ?? "Unknown")}`
+              `/crew/scan-qrcode?cameraId=${encodeURIComponent(firstDevice.id)}&cameraLabel=${encodeURIComponent(firstDevice.label ?? "Unknown")}`,
             );
-          } else {
-            setDevices(availableDevices);
           }
+        } else if (availableDevices.length > 0) {
+          setDevices(availableDevices);
         } else {
           setError("No camera devices found.");
           setDevices([]); // Prevent infinite loading
@@ -40,7 +47,7 @@ export default function GetDevice() {
     const selectedCamera = devices?.find((device) => device.id === value);
     if (selectedCamera) {
       router.push(
-        `/crew/scan-qrcode?cameraId=${encodeURIComponent(selectedCamera.id)}&cameraLabel=${encodeURIComponent(selectedCamera.label ?? "Unknown")}`
+        `/crew/scan-qrcode?cameraId=${encodeURIComponent(selectedCamera.id)}&cameraLabel=${encodeURIComponent(selectedCamera.label ?? "Unknown")}`,
       );
     }
   };
@@ -54,12 +61,17 @@ export default function GetDevice() {
           <AlertTitle>Error</AlertTitle>
           <AlertDescription>{error}</AlertDescription>
         </Alert>
-      ) : devices === null ? ( 
-        <p className="text-center text-gray-500">Loading available cameras...</p>
+      ) : devices === null ? (
+        <p className="text-center text-gray-500">
+          Loading available cameras...
+        </p>
       ) : devices.length > 0 ? (
         <Card>
           <CardContent className="p-4">
-            <RadioGroup onValueChange={handleSelectCamera} className="space-y-3">
+            <RadioGroup
+              onValueChange={handleSelectCamera}
+              className="space-y-3"
+            >
               {devices.map((device) => (
                 <div key={device.id} className="flex items-center space-x-2">
                   <RadioGroupItem id={device.id} value={device.id} />

@@ -153,7 +153,7 @@ export function DataTable<TData, TValue>({
               <TableRow>
                 <TableCell
                   colSpan={columns.length}
-                  className="h-24 text-center"
+                  className="h-96 text-center"
                 >
                   <div className="flex gap-2 items-center justify-center">
                     <aside className="w-6 aspect-square border-t-2 animate-spin rounded-full border" />
@@ -181,7 +181,7 @@ export function DataTable<TData, TValue>({
               <TableRow>
                 <TableCell
                   colSpan={columns.length}
-                  className="h-24 text-center"
+                  className="h-96 text-center"
                 >
                   No results.
                 </TableCell>

@@ -9,6 +9,13 @@ import { ArrowUpDown } from "lucide-react";
 import { Button } from "@workspace/ui/components/button";
 import { Role } from "@workspace/db";
 import { ActionComp } from "./action";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@workspace/ui/components/tooltip";
+import { formatString } from "@/lib/utils";
 
 export type Account = {
   role: Role;
@@ -55,6 +62,18 @@ export const columns: ColumnDef<Account>[] = [
   {
     accessorKey: "userId",
     header: "UserId",
+    cell: ({ row }) => (
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger>
+            {formatString(row.original.userId, 10)}
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>{row.original.userId}</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    ),
   },
   {
     accessorKey: "mobileNo",

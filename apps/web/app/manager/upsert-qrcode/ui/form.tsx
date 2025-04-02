@@ -57,9 +57,7 @@ export default function QrcodeForm({
   const [qrCode, setQrCode] = useState<string>(code);
 
   async function onSubmit(values: FormType) {
-    console.log("Code client side", code);
     const result = await upsertQrcode(code, values);
-    console.log("QR Code Result:", result);
     setQrCode(result.code);
     toast("Qrcode was" + code ? "updated" : "generated", {
       description: new Date().toUTCString(),
@@ -67,7 +65,7 @@ export default function QrcodeForm({
   }
 
   return (
-    <div className="w-full container h-full grid xl:grid-cols-2 p-8 max-md:p-6">
+    <div className="w-full container h-full grid xl:grid-cols-2 p-4">
       <section className="md:p-4">
         <h1 className="text-3xl font-bold py-4">
           {code ? "Update Qrcode" : "Generate Qrcode"}

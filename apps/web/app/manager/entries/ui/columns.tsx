@@ -1,5 +1,12 @@
 "use client";
+import { formatString } from "@/lib/utils";
 import { ColumnDef } from "@tanstack/react-table";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@workspace/ui/components/tooltip";
 
 export type EntryType = {
   eid: string;
@@ -11,8 +18,36 @@ export type EntryType = {
 };
 
 export const columns: ColumnDef<EntryType>[] = [
-  { accessorKey: "eid", header: "Eid" },
-  { accessorKey: "userId", header: "UserId" },
+  {
+    accessorKey: "eid",
+    header: "Eid",
+    cell: ({ row }) => (
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger>{formatString(row.original.eid, 10)}</TooltipTrigger>
+          <TooltipContent>
+            <p>{row.original.eid}</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    ),
+  },
+  {
+    accessorKey: "userId",
+    header: "UserId",
+    cell: ({ row }) => (
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger>
+            {formatString(row.original.userId, 10)}
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>{row.original.userId}</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    ),
+  },
   { accessorKey: "noOfItemsIn", header: "NoOFItemsIn" },
   { accessorKey: "noOfItemsOut", header: "noOfItemsOut" },
   {

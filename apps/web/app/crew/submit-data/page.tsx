@@ -22,7 +22,9 @@ export default function Page() {
   const handleSubmitAll = async () => {
     const newData = (await sumbitAllEntries(data)) as ItemType[];
     setData(newData);
+    localStorage.setItem("scannedItems", JSON.stringify([]));
   };
+
   const removeItem = (code: string) => {
     const newData = data.filter((item) => item.code !== code);
     setData(newData);

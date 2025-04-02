@@ -149,7 +149,7 @@ export function DataTable<
             ))
           ) : (
             <TableRow>
-              <TableCell colSpan={columns.length} className="h-24 text-center">
+              <TableCell colSpan={columns.length} className="h-96 text-center">
                 No results found.
               </TableCell>
             </TableRow>
