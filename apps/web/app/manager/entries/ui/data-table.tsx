@@ -3,6 +3,7 @@ import {
   ColumnDef,
   flexRender,
   getCoreRowModel,
+  getPaginationRowModel,
   PaginationState,
   useReactTable,
 } from "@tanstack/react-table";
@@ -16,6 +17,7 @@ import {
   TableRow,
 } from "@workspace/ui/components/table";
 import { cn } from "@workspace/ui/lib/utils";
+import { fail } from "assert";
 import { Dispatch, SetStateAction } from "react";
 
 interface DataTableProps<TData, TValue> {
@@ -42,7 +44,10 @@ export function DataTable<TData, TValue>({
     state: {
       pagination,
     },
+    autoResetPageIndex: false,
+    manualPagination: true,
     onPaginationChange: setPagination,
+    getPaginationRowModel: getPaginationRowModel(),
     getCoreRowModel: getCoreRowModel(),
   });
 

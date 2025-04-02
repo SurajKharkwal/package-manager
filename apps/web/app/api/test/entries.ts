@@ -1,4 +1,4 @@
-import { prisma } from "../packages/db/src/client";
+import { prisma } from "@workspace/db";
 import { qrCodes } from "./qrcodes";
 
 const accounts = ["user_1", "user_2", "user_3"];
@@ -13,7 +13,7 @@ type Data = {
   userId: string;
 };
 
-async function generateEntries() {
+export async function generateEntries() {
   const arr: Data[] = qrCodes.map((ele) => {
     return {
       noOfItemsIn: randomNumber(1, 10),
@@ -23,7 +23,7 @@ async function generateEntries() {
     };
   });
 
-  await prisma.qrcode.createMany({ data: qrCodes });
+  // await prisma.qrcode.createMany({ data: qrCodes });
 
   await prisma.entry.createMany({ data: arr });
 }
