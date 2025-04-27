@@ -64,21 +64,15 @@ export const ActionComp = ({ row }: { row: Row<Account> }) => {
       <DropdownMenuContent align="end">
         <DropdownMenuLabel>Actions</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem
-          disabled={role == "ADMIN"}
-          onClick={() => handleUserRole(true)}
-        >
+        <DropdownMenuItem disabled={true} onClick={() => handleUserRole(true)}>
           <TrendingUp />
           Promote
         </DropdownMenuItem>
-        <DropdownMenuItem
-          disabled={role == "CREW"}
-          onClick={() => handleUserRole(false)}
-        >
+        <DropdownMenuItem disabled={true} onClick={() => handleUserRole(false)}>
           <TrendingDown />
           Demote
         </DropdownMenuItem>
-        <DropdownMenuItem disabled={role !== "ADMIN"} onClick={handleUserState}>
+        <DropdownMenuItem disabled={true} onClick={handleUserState}>
           <Trash />
           Delete
         </DropdownMenuItem>
