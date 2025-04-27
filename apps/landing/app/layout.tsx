@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "./components/navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,8 +27,20 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
         {children}
+
+        <footer className="py-8 border-4 dark:bg-black mt-16">
+          <div className="mx-auto max-w-7xl px-4 text-center text-neutral-600 dark:text-neutral-400">
+            <div className="flex flex-col items-center justify-center gap-6">
+              {/* Logo or Site Title (Optional) */}
+              <div className="text-2xl pb-8 font-bold">PackageManager</div>
+              <div className="mt-8 text-sm text-neutral-500 dark:text-neutral-400">
+                &copy; {new Date().getFullYear()} YourPackageManager. All rights
+                reserved.
+              </div>
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   );
