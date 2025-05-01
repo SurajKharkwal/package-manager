@@ -1,6 +1,6 @@
-# 📦 Package Manager
+# 📦 Inventory Manager
 
-**Package Manager** is a web-based solution designed to make shopkeeping and inventory tracking effortless. Built as a monorepo, it provides a seamless interface for shop admins and their crew to manage product stock using QR codes and real-time reporting.
+**Inventory Manager** is a web-based solution designed to make shopkeeping and inventory tracking effortless. Built as a monorepo, it provides a seamless interface for shop admins and their crew to manage product stock using QR codes and real-time reporting.
 
 ---
 
@@ -25,36 +25,3 @@
   - Easily check what’s in stock and what’s out.
   - Maintain detailed product logs.
   - Organized and intuitive interface for managing hundreds of items.
-
----
-
-## 📦 Tech Stack
-
--   **Next.js** (App Router + Server Actions)
-    
--   **Tailwind CSS** + **ShadCN UI**
-    
--   **Prisma** + **PostgreSQL**
-    
--   **UploadThing** (for images if needed)
-    
--   **Clerk** (for authentication)
-    
--   **react-infinite-scroll-component** (for smooth QR code scan history)
-    
--   **Turborepo** (for monorepo management)
-    
-
-----------
-
-## 🛠️ Getting Started
-
-```
-# Clone the repository
-git clone https://github.com/your-username/package-manager.git
-cd package-manager
-
-# Install dependencies
-pnpm install  # or npm install / pnpm install
-```
-
