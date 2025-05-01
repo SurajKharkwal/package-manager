@@ -27,7 +27,7 @@ export default function DialogBox({
   setShowDialog,
 }: Props) {
   const [quantity, setQuantity] = useState(1);
-  const [InventoryType, setPackageType] = useState<"IN" | "OUT">("IN");
+  const [InventoryType, setInventoryType] = useState<"IN" | "OUT">("IN");
 
   const handleSubmit = () => {
     const data = {
