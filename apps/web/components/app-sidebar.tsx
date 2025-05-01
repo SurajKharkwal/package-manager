@@ -80,7 +80,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               <Link href="#">
                 <Package className="h-5 w-5" />
                 <span className="text-base font-semibold">
-                  Package Manager.
+                  Inventory Manager.
                 </span>
               </Link>
             </SidebarMenuButton>

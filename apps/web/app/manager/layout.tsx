@@ -7,25 +7,25 @@ import {
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Dashboard | Package Manager",
+  title: "Dashboard | Inventory Manager",
   description:
-    "Manage your shop’s inventory, team, and growth with the Package Manager dashboard.",
+    "Manage your shop’s inventory, team, and growth with the Inventory Manager dashboard.",
   keywords: [
     "shop dashboard",
     "inventory management",
     "team management",
-    "Package Manager",
+    "Inventory Manager",
   ],
   openGraph: {
-    title: "Dashboard | Package Manager",
+    title: "Dashboard | Inventory Manager",
     description:
-      "Effortlessly manage your inventory and team using the Package Manager dashboard.",
-    siteName: "Package Manager",
+      "Effortlessly manage your inventory and team using the Inventory Manager dashboard.",
+    siteName: "Inventory Manager",
     locale: "en_US",
     type: "website",
   },
   twitter: {
-    title: "Dashboard | Package Manager",
+    title: "Dashboard | Inventory Manager",
     description: "Your control center for inventory and team management.",
   },
 };

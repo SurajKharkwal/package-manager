@@ -90,7 +90,7 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
           >
-            Package Manager
+            Inventory Manager
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -132,10 +132,10 @@ export default function Home() {
         <div className="container mx-auto px-6 md:px-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              What is Package Manager?
+              What is Inventory Manager?
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Package Manager is a comprehensive inventory management system
+              Inventory Manager is a comprehensive inventory management system
               that uses QR codes to track products in and out of stock.
             </p>
           </div>
@@ -165,7 +165,7 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">User Roles</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Package Manager supports three distinct user roles, each with
+              Inventory Manager supports three distinct user roles, each with
               specific responsibilities.
             </p>
           </div>
@@ -254,8 +254,8 @@ export default function Home() {
               Key Features
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Discover the powerful features that make Package Manager the ideal
-              solution for your inventory management needs.
+              Discover the powerful features that make Inventory Manager the
+              ideal solution for your inventory management needs.
             </p>
           </div>
 
@@ -271,8 +271,8 @@ export default function Home() {
               Explore Our Pages
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Package Manager offers a variety of pages to help you manage your
-              inventory efficiently.
+              Inventory Manager offers a variety of pages to help you manage
+              your inventory efficiently.
             </p>
           </div>
 
@@ -385,7 +385,7 @@ export default function Home() {
         <div className="container mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
             <div className="col-span-1 md:col-span-2">
-              <h3 className="text-2xl font-bold mb-4">Package Manager</h3>
+              <h3 className="text-2xl font-bold mb-4">Inventory Manager</h3>
               <p className="text-gray-400 mb-6 max-w-md">
                 Streamline your inventory management with our powerful QR code
                 tracking system. Perfect for businesses of all sizes.
@@ -453,7 +453,7 @@ export default function Home() {
           </div>
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
             <p>
-              &copy; {new Date().getFullYear()} Package Manager. All rights
+              &copy; {new Date().getFullYear()} Inventory Manager. All rights
               reserved.
             </p>
           </div>

@@ -27,14 +27,14 @@ export default function DialogBox({
   setShowDialog,
 }: Props) {
   const [quantity, setQuantity] = useState(1);
-  const [packageType, setPackageType] = useState<"IN" | "OUT">("IN");
+  const [InventoryType, setPackageType] = useState<"IN" | "OUT">("IN");
 
   const handleSubmit = () => {
     const data = {
       code: qrcode,
       state: "pending",
-      noOfItemIn: packageType === "IN" ? quantity : 0,
-      noOfItemOut: packageType === "OUT" ? quantity : 0,
+      noOfItemIn: InventoryType === "IN" ? quantity : 0,
+      noOfItemOut: InventoryType === "OUT" ? quantity : 0,
     };
 
     const storedData = JSON.parse(localStorage.getItem("scannedItems") || "[]");
@@ -49,7 +49,7 @@ export default function DialogBox({
         <DialogHeader>
           <DialogTitle>Scan Details</DialogTitle>
           <DialogDescription>
-            Enter the number of items and select the package type.
+            Enter the number of items and select the Inventory type.
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
@@ -68,15 +68,15 @@ export default function DialogBox({
           </div>
           <RadioGroup
             defaultValue="IN"
-            onValueChange={(value) => setPackageType(value as "IN" | "OUT")}
+            onValueChange={(value) => setInventoryType(value as "IN" | "OUT")}
           >
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="IN" id="IN" />
-              <Label htmlFor="IN">Package Received</Label>
+              <Label htmlFor="IN">Inventory Received</Label>
             </div>
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="OUT" id="OUT" />
-              <Label htmlFor="OUT">Package Sold</Label>
+              <Label htmlFor="OUT">Inventory Sold</Label>
             </div>
           </RadioGroup>
         </div>

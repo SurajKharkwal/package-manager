@@ -11,7 +11,7 @@ export function PricingCards() {
       name: "Free",
       price: "$0",
       billing: "forever",
-      description: "Perfect for trying out Package Manager",
+      description: "Perfect for trying out Inventory Manager",
       features: ["Read Only privlages", "Access to few Pages only"],
       cta: "Get Started",
       popular: false,

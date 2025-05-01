@@ -13,26 +13,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Package Manager | Manage your shop easily",
+  title: "Inventory Manager | Manage your shop easily",
   description:
-    "Track inventory, manage your team, and organize your shop operations effortlessly with our package manager.",
+    "Track inventory, manage your team, and organize your shop operations effortlessly with our Inventory manager.",
   keywords: [
     "inventory management",
     "shop manager",
     "team collaboration",
     "stock tracking",
   ],
-  authors: [{ name: "Package Manager Team", url: "https://yourdomain.com" }],
+  authors: [{ name: "Inventory Manager Team", url: "https://yourdomain.com" }],
   openGraph: {
-    title: "Package Manager",
+    title: "Inventory Manager",
     description:
       "Simplify your shop management with easy inventory and team tracking.",
-    siteName: "Package Manager",
+    siteName: "Inventory Manager",
     locale: "en_US",
     type: "website",
   },
   twitter: {
-    title: "Package Manager",
+    title: "Inventory Manager",
     description:
       "Simplify your shop management with easy inventory and team tracking.",
   },
