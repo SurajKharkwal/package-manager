@@ -15,7 +15,7 @@ export function PricingCards() {
       features: ["Read Only privlages", "Access to few Pages only"],
       cta: "Get Started",
       popular: false,
-      url: "https://pck-mgr-web.vercel.app/manager/dashboard",
+      url: "https://inventory-mgr.vercel.app/manager/dashboard",
     },
     {
       name: "Pro",

@@ -107,7 +107,7 @@ export default function Home() {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Link
-              href="https://pck-mgr-web.vercel.app/manager/dashboard"
+              href="https://inventory-mgr.vercel.app/manager/dashboard"
               className="bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-lg flex items-center justify-center"
             >
               Visit Website
@@ -290,7 +290,7 @@ export default function Home() {
                 performance metrics.
               </p>
               <Link
-                href="https://pck-mgr-web.vercel.app/manager/dashboard"
+                href="https://inventory-mgr.vercel.app/manager/dashboard"
                 className="text-primary hover:underline flex items-center"
               >
                 View Dashboard
@@ -311,7 +311,7 @@ export default function Home() {
                 performance.
               </p>
               <Link
-                href="https://pck-mgr-web.vercel.app/manager/team"
+                href="https://inventory-mgr.vercel.app/manager/team"
                 className="text-primary hover:underline flex items-center"
               >
                 Manage Team
@@ -331,7 +331,7 @@ export default function Home() {
                 Manage your profile information and account preferences.
               </p>
               <Link
-                href="https://pck-mgr-web.vercel.app/manager/profile"
+                href="https://inventory-mgr.vercel.app/manager/profile"
                 className="text-primary hover:underline flex items-center"
               >
                 View Profile
@@ -352,7 +352,7 @@ export default function Home() {
                 business needs.
               </p>
               <Link
-                href="https://pck-mgr-web.vercel.app/manager/billing"
+                href="https://inventory-mgr.vercel.app/manager/billing"
                 className="text-primary hover:underline flex items-center"
               >
                 View Pricing
